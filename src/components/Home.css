@@ -19,11 +19,13 @@
 }
 
 .search_btn {
-    padding: 20px 30px!important
+    padding: 20px 30px!important;
 }
 
 .ts_btn:hover {
     background-color: #387EAC!important;
+    transform:scale(0.9, 0.9);
+    transition: 0.5s;
 }
 
 .hero {
@@ -57,6 +59,10 @@
     border-radius: 30px !important;
 }
 
+.hero_search:focus {
+    background: white!important;
+}
+
 .ts_categories{
     margin-top: 50px;
     background-image: url('../assets/img/cat_heading.png');
@@ -72,20 +78,25 @@
 
 .ts_categories_options {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: flex-start;
     align-content: flex-start;
-    height: 30vh;
-    overflow: auto;
     flex-direction: row;
     margin-top: 50px;
 }
 
 .ts_option{
-    width: 190px;
-    height: 289px;
+    width: 170px;
+    height: 350px;
     margin: 10px;
+    transform:scale(1, 1);
+    transition: 0.5s;
+}
+
+.ts_option:hover {
+    transform:scale(0.9, 0.9);
+    transition: 0.5s;
 }
 
 .ts_option h3 {
@@ -109,4 +120,36 @@
     text-align: center;
     font-size: 36px;
     font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.top_shots_gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    flex-direction: row;
+}
+
+.ts_footer {
+    margin-top: 80px;
+}
+
+
+.brand{
+    max-width: 50%;
+}
+
+
+.footer_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 0 50px 0
+}
+
+.header_divider {
+    border-color: rgba(0, 0, 0, 0.2)!important;
+    margin-top: 20px;
 }
