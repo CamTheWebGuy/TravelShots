@@ -70,6 +70,19 @@
     background-size: 600px;
 }
 
+.ts_favorites{
+    margin-top: 50px;
+    background-image: url('../assets/img/flw_heading.png');
+    background-repeat: no-repeat;
+    background-size: 600px;
+}
+
+.ts_favorites h2{
+    font-size: 36px;
+    font-weight: 800;
+    padding-top: 2%
+}
+
 .ts_categories h2{
     font-size: 36px;
     font-weight: 800;

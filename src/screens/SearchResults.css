@@ -1,0 +1,26 @@
+.sr_top{
+    margin-top: 50px;
+    text-align: center;
+}
+
+.sr_top h2{
+    font-size: 30px;
+    font-weight: 800;
+    padding-top: 2%
+}
+
+.sr_search_query{
+    font-size: 22px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.sr_query{
+    color: #3498DB;
+}
+
+.sr_heading{
+    display: flex;
+    justify-content: space-between
+    
+}

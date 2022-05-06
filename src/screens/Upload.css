@@ -1,0 +1,38 @@
+.upload_card {
+    background: white;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    -webkit-box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.47); 
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.33);
+    box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.33);
+}
+
+.upload_card h1{
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.upload_options{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+
+.upload_photo{
+    padding: 30px;
+    border-right: 1px solid rgba(0,0,0,0.10);
+}
+
+.upload_album{
+    padding: 30px;
+}
+
+.pointer {
+    cursor: pointer;
+}

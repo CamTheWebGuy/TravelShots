@@ -1,17 +1,28 @@
 import React, { Fragment } from 'react';
-import { FaUserPlus, FaSearch } from 'react-icons/fa';
-import { Container, Input, Button, Divider } from '@chakra-ui/react';
+import { FaUserPlus, FaSearch, FaChevronDown } from 'react-icons/fa';
+import {
+  Container,
+  Input,
+  Button,
+  Divider,
+  Avatar,
+  AvatarGroup,
+  Menu,
+  MenuButton,
+  MenuList,
+  MenuItem,
+} from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 
 import '@fontsource/roboto';
-import './Home.css';
+import './Dashboard.css';
 
 import logo from '../assets/img/logo.png';
-import TopShotsItem from './TopShotsItem';
-import CategoryItem from './CategoryItem';
-import Footer from './Footer';
+import TopShotsItem from '../components/TopShotsItem';
+import CategoryItem from '../components/CategoryItem';
+import Footer from '../components/Footer';
 
-const Home = () => {
+const Dashboard = () => {
   const navigate = useNavigate();
   return (
     <Fragment>
@@ -22,33 +33,47 @@ const Home = () => {
               <span onClick={() => navigate('/')}>
                 <img src={logo} alt="Travel Shots" />
               </span>
-              <nav>
-                <Button
-                  className="login-btn"
-                  colorScheme="white"
-                  variant="link"
-                >
-                  Login
-                </Button>
+              <nav className="user_nav_menu">
                 <Button
                   className="ts_btn"
-                  onClick={() => navigate('/register')}
+                  onClick={() => navigate('/upload')}
                   colorScheme="blue"
                   leftIcon={<FaUserPlus />}
                 >
-                  Sign Up
+                  Upload Photos
                 </Button>
+
+                <Menu>
+                  <MenuButton
+                    className="user_menu_toggle"
+                    as={Button}
+                    rightIcon={<FaChevronDown />}
+                  >
+                    <div className="user_info">
+                      <Avatar
+                        size="sm"
+                        name="Dan Abrahmov"
+                        src="https://bit.ly/dan-abramov"
+                      />
+                      <h3>Ryan Chambers</h3>
+                    </div>
+                  </MenuButton>
+                  <MenuList>
+                    <MenuItem>My Profile</MenuItem>
+                    <MenuItem>My Uploads</MenuItem>
+                    <MenuItem>Account Settings</MenuItem>
+                    <MenuItem>Logout</MenuItem>
+                  </MenuList>
+                </Menu>
               </nav>
             </div>
             <Divider className="header_divider" />
 
             <div className="hero_content">
               <h1 className="hero_heading">
-                Explore The World From a Different Perspective.
+                Welcome Back to TravelShots, Ryan.
               </h1>
-              <h3 className="hero_subheading">
-                Your #1 community for sharing travel photos and stories
-              </h3>
+              <h3 className="hero_subheading">Where do you want to go?</h3>
               <div
                 style={{
                   marginTop: 30,
@@ -75,41 +100,67 @@ const Home = () => {
           </header>
         </Container>
       </div>
-      <div className="ts_categories">
+      <div className="ts_favorites">
         <Container maxW="1200px">
           <div className="categories_heading">
-            <h2>Search By Catagories</h2>
+            <h2>People You Follow</h2>
           </div>
           <div className="ts_categories_options">
-            <CategoryItem
+            <TopShotsItem
               link="#"
-              title="Cruises"
-              img="https://images.unsplash.com/photo-1580541631950-7282082b53ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
+              authorName="Josh Monte"
+              likes="1,473"
+              authorAvatar="https://bit.ly/dan-abramov"
+              img="https://images.unsplash.com/photo-1528041119984-da3a9f8d04d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1409&q=80"
             />
-            <CategoryItem
+            <TopShotsItem
               link="#"
-              title="Asia"
-              img="https://images.unsplash.com/photo-1595475218257-c04f46b25cfc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+              authorName="Josh Monte"
+              likes="1,473"
+              authorAvatar="https://bit.ly/dan-abramov"
+              img="https://images.unsplash.com/photo-1528041119984-da3a9f8d04d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1409&q=80"
             />
-            <CategoryItem
+            <TopShotsItem
               link="#"
-              title="United Kingdom"
-              img="https://images.unsplash.com/photo-1588064011404-57a7bc7133f5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+              authorName="Josh Monte"
+              likes="1,473"
+              authorAvatar="https://bit.ly/dan-abramov"
+              img="https://images.unsplash.com/photo-1528041119984-da3a9f8d04d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1409&q=80"
             />
-            <CategoryItem
+            <TopShotsItem
               link="#"
-              title="Events"
-              img="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
+              authorName="Josh Monte"
+              likes="1,473"
+              authorAvatar="https://bit.ly/dan-abramov"
+              img="https://images.unsplash.com/photo-1528041119984-da3a9f8d04d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1409&q=80"
             />
-            <CategoryItem
+            <TopShotsItem
               link="#"
-              title="Africa"
-              img="https://images.unsplash.com/photo-1523805009345-7448845a9e53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
+              authorName="Josh Monte"
+              likes="1,473"
+              authorAvatar="https://bit.ly/dan-abramov"
+              img="https://images.unsplash.com/photo-1528041119984-da3a9f8d04d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1409&q=80"
             />
-            <CategoryItem
+            <TopShotsItem
               link="#"
-              title="Theme Parks"
-              img="https://images.unsplash.com/photo-1535764558463-30f3af596bee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"
+              authorName="Josh Monte"
+              likes="1,473"
+              authorAvatar="https://bit.ly/dan-abramov"
+              img="https://images.unsplash.com/photo-1528041119984-da3a9f8d04d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1409&q=80"
+            />
+            <TopShotsItem
+              link="#"
+              authorName="Josh Monte"
+              likes="1,473"
+              authorAvatar="https://bit.ly/dan-abramov"
+              img="https://images.unsplash.com/photo-1528041119984-da3a9f8d04d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1409&q=80"
+            />
+            <TopShotsItem
+              link="#"
+              authorName="Josh Monte"
+              likes="1,473"
+              authorAvatar="https://bit.ly/dan-abramov"
+              img="https://images.unsplash.com/photo-1528041119984-da3a9f8d04d1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1409&q=80"
             />
           </div>
         </Container>
@@ -184,4 +235,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Dashboard;

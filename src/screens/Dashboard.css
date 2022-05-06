@@ -1,0 +1,14 @@
+.user_menu_toggle{
+    background-color: transparent!important;
+}
+
+
+.user_info {
+    display: flex;
+    flex-direction: row;
+}
+
+.user_info h3 {
+    padding-top: 5px;
+    padding-left: 5px;
+}
